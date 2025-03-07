@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 聊天室</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎使用 JB 聊天室</h1>
+        <h3>我们的特点</h3>
+        <h4> ✔定时清除聊天记录</h4>
+        <h4> ✔聊天记录加密算法</h4>
+        <h4> ✔用户隐私哈希加密</h4>
+        <h4> ✔防止注入守护安全</h4>
+            <a href="https://zjb522.cn/ltsgxrz/" target="_blank">更新日志</a>
+        
+        <form action="server/login.php" method="POST" class="form">
+            <input type="text" name="username" placeholder="用户名" required>
+            <input type="password" name="password" placeholder="密码" required>
+            <button type="submit">登录</button>
+        </form>
+        <div class="links">
+            <a href="register.html">注册新用户</a>
+            <a href="javascript:void(0)" onclick="anonymousLogin()"></a>//匿名登录有 bug
+        </div>
+        <footer>
+            <p>感谢以下开源项目的支持及帮助人员：</p>
+            <ul>
+                <li><a href="https://www.php.net/" target="_blank">PHP</a></li>
+                <li><a href="https://www.json.org/" target="_blank">JSON</a></li>
+                <li><a href="https://developer.mozilla.org/" target="_blank">MDN 文档</a></li>
+                <li><a href ="http://wswzh.ccccocccc.cc/ChatRoom/" target="_blank">Wzh 技术指导</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        function anonymousLogin() {
+            document.cookie = "anonymous=true"; // 设置匿名登录标记
+            window.location.href = "chatroom.html"; // 跳转至聊天室大厅
+        }
+    </script>
+    <button onclick="location.href='https://zjb522.cn/JBCREN'">English</button>
+     <button onclick="location.href='https://zjb522.cn/JBCRRU'">Русский</button>
+    
+
+</body>
+</html>

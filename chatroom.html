@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室大厅</title>
+    <link rel="stylesheet" href="styles/chatroom.css">
+</head>
+<body>
+    <div class="container">
+        <h1>聊天室大厅</h1>
+         <li><a href ="https://zjb522.cn/lts/" target="_blank">公共匿名聊天室</a></li>
+          <li><a href ="https://zjb522.cn/AICHAT/" target="_blank">没人聊天？快去尝试和AI聊天吧！</a></li>          
+    <p>当前注册用户数量</p>
+    <p class="count">加载中...</p>
+    <script>
+        async function fetchUserCount() {
+            try {
+                const response = await fetch('get_user_count.php');
+                if (!response.ok) {
+                    throw new Error('无法获取用户数量');
+                }
+                const data = await response.json();
+                document.querySelector('.count').textContent = `${data.count} 人`;
+            } catch (error) {
+                document.querySelector('.count').textContent = '加载失败，请稍后再试。';
+                console.error(error);
+            }
+        }
+
+        // 初次加载用户数量
+        fetchUserCount();
+
+        // 每 10 秒更新一次用户数量
+        setInterval(fetchUserCount, 10000);
+    </script>
+
+        <form action="server/create_room.php" method="POST" class="form">
+            <input type="text" name="room_name" placeholder="房间名称" required>
+            <input type="password" name="room_password" placeholder="房间密码（可选）">
+            <button type="submit">创建房间</button>
+        </form>
+        <div id="room-list"></div>
+    </div>
+    <script src="scripts/chatroom.js"></script>
+</body>
+</html>
