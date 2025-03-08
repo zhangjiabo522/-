@@ -110,42 +110,6 @@ messages.json：存储聊天记录。
 
 
 
----
-
-项目结构
-
-chatroom-app/
-│
-├── index.html             # 登录页面
-├── register.html          # 注册页面
-├── chatroom.html          # 聊天室大厅
-├── chat.html              # 聊天页面
-│
-├── styles/                # 样式文件
-│   ├── main.css           # 全局样式
-│   ├── chatroom.css       # 聊天室大厅样式
-│   ├── chat.css           # 聊天页面样式
-│
-├── scripts/               # 前端逻辑
-│   ├── chatroom.js        # 处理聊天室大厅逻辑
-│   ├── chat.js            # 处理聊天页面逻辑
-│
-├── server/                # PHP 后端逻辑
-│   ├── register.php       # 处理用户注册
-│   ├── login.php          # 处理用户登录
-│   ├── create_room.php    # 创建房间
-│   ├── delete_room.php    # 删除房间
-│   ├── enter_room.php     # 进入房间
-│   ├── save_message.php   # 处理消息存储
-│   ├── fetch_messages.php # 获取消息
-│   ├── fetch_rooms.php    # 获取房间列表
-│   ├── current_user.php   # 获取当前登录用户信息
-│   ├── rooms.json         # 存储聊天室信息
-│   ├── messages.json      # 存储聊天记录
-│   ├── users.txt          # 存储用户信息
-
-
----
 
 安装与使用
 
